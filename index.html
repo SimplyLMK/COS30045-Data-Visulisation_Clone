@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Power Electronics</title>
+  <style>
+    /* Reset */
+    body, ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      color: #222;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      background-color: #222;
+      padding: 10px 20px;
+    }
+
+    .logo img {
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin-left: auto;
+    }
+
+    .navbar li {
+      margin-left: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    /* Hover feedback */
+    .navbar a:hover {
+      background-color: #f90;
+      color: #000;
+      border-radius: 4px;
+    }
+
+    /* Active page feedback */
+    .navbar a.active {
+      font-weight: bold;
+      border-bottom: 2px solid #f90;
+    }
+
+    /* Page content */
+    main {
+      padding: 20px;
+      min-height: 70vh;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a class="logo" onclick="showPage('home')">
+      <img src="images/PowerIcon.png" alt="Power Logo">
+    </a>
+    <ul>
+      <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a onclick="showPage('televisions')" id="nav-televisions">Televisions</a></li>
+      <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <main>
+    <section id="home" class="active">
+      <h1>Welcome to Power Electronics</h1>
+      <p>Explore appliance energy consumption trends in the Australian market. 
+         With rising electricity prices, Australians are increasingly focused on energy-efficient 
+         appliances such as televisions, refrigerators, and washing machines.</p>
+      <p>Did you know? On average, televisions in Australia consume between <strong>60–200 watts</strong> 
+         depending on screen size and technology, with OLED and LED models generally more efficient than plasma.</p>
+    </section>
+
+    <section id="televisions">
+      <h1>Television Energy Consumption</h1>
+      <p>In the Australian market, the energy efficiency of televisions varies greatly by screen 
+         technology and size. For example:</p>
+      <ul>
+        <li><strong>LED TVs</strong>: 60–120 W, highly efficient</li>
+        <li><strong>OLED TVs</strong>: 90–150 W, good balance of quality and efficiency</li>
+        <li><strong>Plasma TVs</strong>: 150–300 W, less efficient and being phased out</li>
+      </ul>
+      <p>The Australian Government’s <em>Energy Rating Label</em> helps consumers compare running costs. 
+         Households that choose 5-star rated TVs can save hundreds in electricity bills over a product’s lifetime.</p>
+    </section>
+
+    <section id="about">
+      <h1>About Power Electronics</h1>
+      <p>We provide insights into energy-efficient appliances to help Australians make smarter 
+         purchasing decisions. Our mission is to reduce energy consumption while promoting 
+         sustainable technology choices.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> Minh Kha, Le — Site powered by Co-Pilot
+  </footer>
+
+  <script>
+    // Show the selected section
+    function showPage(pageId) {
+      document.querySelectorAll("main section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(pageId).classList.add("active");
+
+      document.querySelectorAll(".navbar a").forEach(link => link.classList.remove("active"));
+      document.getElementById("nav-" + pageId)?.classList.add("active");
+    }
+
+    // Insert current year automatically
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
