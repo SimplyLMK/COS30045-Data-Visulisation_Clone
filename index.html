@@ -74,6 +74,14 @@
       display: block;
     }
 
+    /* Center images */
+    section img {
+      display: block;
+      margin: 20px auto;
+      max-width: 90%;
+      height: auto;
+    }
+
     /* Footer */
     footer {
       background-color: #222;
@@ -92,7 +100,9 @@
     </a>
     <ul>
       <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a onclick="showPage('audience')" id="nav-audience">Audience</a></li>
       <li><a onclick="showPage('televisions')" id="nav-televisions">Televisions</a></li>
+      <li><a onclick="showPage('data')" id="nav-data">About the Data</a></li>
       <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
     </ul>
   </nav>
@@ -108,17 +118,39 @@
          depending on screen size and technology, with OLED and LED models generally more efficient than plasma.</p>
     </section>
 
-    <section id="televisions">
+    <section id="audience">
+      <h1>Who is this for?</h1>
+      <p>This visualisation is designed for <strong>Australian households and consumers</strong> 
+        who want to make informed decisions when buying new televisions. 
+        Energy efficiency is an important factor in reducing electricity bills and 
+        promoting sustainable consumption.</p>
+    </section>
+
+    <section id="televisions">  
       <h1>Television Energy Consumption</h1>
-      <p>In the Australian market, the energy efficiency of televisions varies greatly by screen 
-         technology and size. For example:</p>
+
+      <p>LCD and LED technologies dominate the Australian market. Plasma is rare and declining.</p>
+      <p>Most TVs sold fall between 40–55 inches, aligning with consumer preference for mid-range sizes.</p>
+      <p>LED televisions are the most energy-efficient on average. Plasma consumes significantly more power.</p>
+      <p>As expected, power use increases with larger screen sizes. This means households should consider 
+        both screen size and star rating when purchasing.</p>
+      <p>Smaller TVs are more likely to achieve higher star ratings, but recent technology improvements 
+        allow even 65-inch TVs to achieve 4–5 stars.</p>
+      <img src="images/a.png" alt="Energy consumption chart">
+    </section>
+
+    <section id="data">
+      <h1>About the Data</h1>
+      <p>The dataset comes from the <a href="https://www.energyrating.gov.au/">Australian Government Energy Rating Register</a> 
+        (downloaded September 2025). It includes information about TV brands, models, 
+        screen sizes, technologies, and energy consumption metrics.</p>
       <ul>
-        <li><strong>LED TVs</strong>: 60–120 W, highly efficient</li>
-        <li><strong>OLED TVs</strong>: 90–150 W, good balance of quality and efficiency</li>
-        <li><strong>Plasma TVs</strong>: 150–300 W, less efficient and being phased out</li>
+        <li><strong>Processing:</strong> Filtered for Australian market entries, removed duplicates, 
+            converted cm to inches, grouped into screen size categories.</li>
+        <li><strong>Privacy:</strong> Data contains no personal or sensitive information.</li>
+        <li><strong>Accuracy:</strong> Data relies on manufacturer submissions; discrepancies may exist.</li>
+        <li><strong>Ethics:</strong> Analysis aims to promote informed consumer choices and sustainability.</li>
       </ul>
-      <p>The Australian Government’s <em>Energy Rating Label</em> helps consumers compare running costs. 
-         Households that choose 5-star rated TVs can save hundreds in electricity bills over a product’s lifetime.</p>
     </section>
 
     <section id="about">
