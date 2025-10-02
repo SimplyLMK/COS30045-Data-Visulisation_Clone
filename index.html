@@ -90,6 +90,38 @@
       padding: 10px;
       font-size: 0.9em;
     }
+
+    .tv-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr; 
+      gap: 40px;
+      align-items: start;
+    }
+
+    .tv-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tv-section {
+      margin-top: 10em;
+      margin-left: 5em;
+      /* margin: 60px 0;  */
+      margin-bottom: 10em;
+    }
+
+    .tv-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .tv-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+
   </style>
 </head>
 <body>
@@ -129,15 +161,36 @@
     <section id="televisions">  
       <h1>Television Energy Consumption</h1>
 
-      <p>LCD and LED technologies dominate the Australian market. Plasma is rare and declining.</p>
-      <p>Most TVs sold fall between 40–55 inches, aligning with consumer preference for mid-range sizes.</p>
-      <p>LED televisions are the most energy-efficient on average. Plasma consumes significantly more power.</p>
-      <p>As expected, power use increases with larger screen sizes. This means households should consider 
-        both screen size and star rating when purchasing.</p>
-      <p>Smaller TVs are more likely to achieve higher star ratings, but recent technology improvements 
-        allow even 65-inch TVs to achieve 4–5 stars.</p>
-      <img src="images/a.png" alt="Energy consumption chart">
+      <div class="tv-layout">
+        <!-- Left column (text) -->
+        <div class="tv-text">
+          <div class="tv-section">
+            <p>LCD and LED technologies dominate the Australian market. Plasma is rare and declining.</p>
+            <p>Most TVs sold fall between 40–55 inches, aligning with consumer preference for mid-range sizes.</p>
+          </div>
+
+          <div class="tv-section">
+            <p>LED televisions are the most energy-efficient on average. Plasma consumes significantly more power.</p>
+            <p>As expected, power use increases with larger screen sizes. This means households should consider 
+              both screen size and star rating when purchasing.</p>
+          </div>
+
+          <div class="tv-section">
+            <p>Smaller TVs are more likely to achieve higher star ratings, but recent technology improvements 
+              allow even 65-inch TVs to achieve 4–5 stars.</p>
+          </div>
+        </div>
+
+        <!-- Right column (image split by sections) -->
+        <div class="tv-image">
+          <div class="img-section">
+            <img src="images/a.png" alt="Energy consumption chart">
+          </div>
+        </div>
+      </div>
     </section>
+
+
 
     <section id="data">
       <h1>About the Data</h1>
