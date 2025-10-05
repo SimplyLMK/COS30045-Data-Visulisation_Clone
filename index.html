@@ -2,152 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Power Electronics</title>
+  <title>Exercise 4 - SVG House</title>
   <style>
-    /* Reset */
-    body, ul {
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: Arial, sans-serif;
-      background-color: #fafafa;
-      color: #222;
+      margin: 20px;
     }
-
-    /* Navbar */
-    .navbar {
+    h2 {
+      margin-top: 40px;
+      color: #333;
+    }
+    .row {
       display: flex;
-      align-items: center;
-      background-color: #222;
-      padding: 10px 20px;
+      gap: 20px;
+      align-items: flex-start;
     }
-
-    .logo img {
-      height: 40px;
-      cursor: pointer;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      margin-left: auto;
-    }
-
-    .navbar li {
-      margin-left: 20px;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: white;
-      padding: 8px 12px;
-      transition: background-color 0.3s, color 0.3s;
-      cursor: pointer;
-    }
-
-    /* Hover feedback */
-    .navbar a:hover {
-      background-color: #f90;
-      color: #000;
-      border-radius: 4px;
-    }
-
-    /* Active page feedback */
-    .navbar a.active {
-      font-weight: bold;
-      border-bottom: 2px solid #f90;
-    }
-
-    /* Page content */
-    main {
-      padding: 20px;
-      min-height: 70vh;
-    }
-
-    section {
-      display: none;
-    }
-
-    section.active {
-      display: block;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 0.9em;
+    img, svg {
+      border: 1px solid #aaa;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a class="logo" onclick="showPage('home')">
-      <img src="images/PowerIcon.png" alt="Power Logo">
-    </a>
-    <ul>
-      <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
-      <li><a onclick="showPage('televisions')" id="nav-televisions">Televisions</a></li>
-      <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
-    </ul>
-  </nav>
 
-  <!-- Page Content -->
-  <main>
-    <section id="home" class="active">
-      <h1>Welcome to Power Electronics</h1>
-      <p>Explore appliance energy consumption trends in the Australian market. 
-         With rising electricity prices, Australians are increasingly focused on energy-efficient 
-         appliances such as televisions, refrigerators, and washing machines.</p>
-      <p>Did you know? On average, televisions in Australia consume between <strong>60–200 watts</strong> 
-         depending on screen size and technology, with OLED and LED models generally more efficient than plasma.</p>
-    </section>
 
-    <section id="televisions">
-      <h1>Television Energy Consumption</h1>
-      <p>In the Australian market, the energy efficiency of televisions varies greatly by screen 
-         technology and size. For example:</p>
-      <ul>
-        <li><strong>LED TVs</strong>: 60–120 W, highly efficient</li>
-        <li><strong>OLED TVs</strong>: 90–150 W, good balance of quality and efficiency</li>
-        <li><strong>Plasma TVs</strong>: 150–300 W, less efficient and being phased out</li>
-      </ul>
-      <p>The Australian Government’s <em>Energy Rating Label</em> helps consumers compare running costs. 
-         Households that choose 5-star rated TVs can save hundreds in electricity bills over a product’s lifetime.</p>
-    </section>
+  <!-- Step 1 -->
+  <h2>SVG House</h2>
+  <div class="row">
+    <!-- Non-annotated SVG -->
+    <svg width="600" height="400">
+      <!-- Ground -->
+      <rect x="0" y="300" width="600" height="100" fill="lightgreen" />
+      <!-- House body -->
+      <rect x="200" y="150" width="200" height="150" fill="burlywood" stroke="black" stroke-width="2" />
+      <!-- Roof -->
+      <polygon points="200,150 400,150 300,80" fill="firebrick" stroke="black" stroke-width="2"/>
+      <!-- Door -->
+      <rect x="280" y="230" width="40" height="70" fill="saddlebrown" stroke="black" />
+      <!-- Windows -->
+      <rect x="220" y="180" width="40" height="40" fill="skyblue" stroke="black" />
+      <rect x="340" y="180" width="40" height="40" fill="skyblue" stroke="black" />
+      <!-- Path -->
+      <path d="M300 300 Q290 350 260 400" stroke="gray" stroke-width="4" fill="none" />
+      <!-- Tree -->
+      <rect x="450" y="220" width="20" height="80" fill="sienna" />
+      <circle cx="460" cy="200" r="40" fill="darkgreen" />
+      <!-- Sun -->
+      <circle cx="80" cy="80" r="40" fill="gold" />
+      <!-- Text -->
+      <text x="240" y="370" font-size="20" fill="black">My House</text>
+    </svg>
 
-    <section id="about">
-      <h1>About Power Electronics</h1>
-      <p>We provide insights into energy-efficient appliances to help Australians make smarter 
-         purchasing decisions. Our mission is to reduce energy consumption while promoting 
-         sustainable technology choices.</p>
-    </section>
-  </main>
+    <!-- Step 2: Annotated version -->
+    <div>
+      <!-- <h3>Annotated Coordinates</h3>
+      
+      <img src="image/annotated.png" alt="Annotated SVG example" width="600">
+    </div>
+  </div> -->
 
-  <!-- Footer -->
-  <footer>
-    &copy; <span id="year"></span> Minh Kha, Le — Site powered by Co-Pilot
-  </footer>
+  <!-- Step 3 -->
 
-  <script>
-    // Show the selected section
-    function showPage(pageId) {
-      document.querySelectorAll("main section").forEach(sec => sec.classList.remove("active"));
-      document.getElementById(pageId).classList.add("active");
+  
 
-      document.querySelectorAll(".navbar a").forEach(link => link.classList.remove("active"));
-      document.getElementById("nav-" + pageId)?.classList.add("active");
-    }
-
-    // Insert current year automatically
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("year").textContent = new Date().getFullYear();
-    });
-  </script>
 </body>
 </html>
