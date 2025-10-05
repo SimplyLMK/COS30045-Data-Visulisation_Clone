@@ -3,27 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Exercise 4 - SVG House</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    h2 {
-      margin-top: 40px;
-      color: #333;
-    }
-    .row {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-    img, svg {
-      border: 1px solid #aaa;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-  </style>
-</head>
-<body>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  h2 {
+    margin-top: 40px;
+    color: #333;
+  }
+  .row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  img, svg {
+    border: 1px solid #aaa;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+</style>
 
 
   <!-- Step 1 -->
@@ -61,8 +59,10 @@
     </div>
   </div>
 
-  <!-- Step 3 -->
-  <h2>Customised SVG</h2>
+<!-- Step 3 and 4–5 -->
+<h2>Step 3: Customised SVG (with Step 4–5 DOM Screenshot)</h2>
+<div class="row">
+  <!-- Customised SVG on the left -->
   <svg width="600" height="400">
     <rect x="0" y="300" width="600" height="100" fill="lightgreen" />
     <!-- House body (new color) -->
@@ -88,7 +88,16 @@
     <!-- Text -->
     <text x="230" y="380" font-size="20" fill="black">My Customised House</text>
   </svg>
-  
+
+  <!-- DOM screenshot on the right -->
+  <div>
+    <h3>DOM View</h3>
+
+    <img src="image/dom.png" alt="DOM view showing grouped SVG elements" width="600">
+  </div>
+</div>
+
+
 
 </body>
 </html>
