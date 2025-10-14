@@ -1,45 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Exercise 4.5 – D3 Bar Chart</title>
+  <meta charset="UTF-8" />
+  <title>Exercise 4.6 – Scaled Bar Chart</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
     body {
       font-family: sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
     }
-    h1 {
-      text-align: center;
+
+    .responsive-svg-container {
+      width: 600px;
+      height: 500px;
+      border: 1px solid #aaa;
+      margin: 20px auto;
     }
-    .chart-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 30px;
+
+    .bar {
+      fill: steelblue;
     }
-    svg {
-      background: #fff;
-      border: 1px solid #ccc;
-    }
-    text {
-      font-size: 14px;
-      fill: #333;
+
+    .bar:hover {
+      fill: darkorange;
     }
   </style>
 </head>
 <body>
-  <h1>TV Energy Consumption Data</h1>
-  <p style="text-align:center;">a.</p>
+  <h2 style="text-align:center">Exercise 4.6: Scaled Bar Chart</h2>
+  <div class="responsive-svg-container"></div>
 
-  <div class="chart-container">
-    <!-- SVG will be injected here -->
-    <div id="chart"></div>
-  </div>
-
-  <!-- D3 -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <!-- Your script -->
-  <script src="js/d3_load.js"></script>
+  <script src="bar_chart.js"></script>
 </body>
 </html>
