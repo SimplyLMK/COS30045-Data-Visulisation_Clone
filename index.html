@@ -1,21 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Exercise 4.3 – D3 Setup</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Exercise 4.5 – D3 Bar Chart</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .chart-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+    svg {
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+    text {
+      font-size: 14px;
+      fill: #333;
+    }
+  </style>
 </head>
 <body>
   <h1>TV Energy Consumption Data</h1>
-  <p>We will use D3 to generate a simple bar chart.</p>
+  <p style="text-align:center;">a.</p>
 
-  <!-- Responsive SVG container -->
-  <div class="responsive-svg-container"></div>
+  <div class="chart-container">
+    <!-- SVG will be injected here -->
+    <div id="chart"></div>
+  </div>
 
-  <!-- D3 library -->
+  <!-- D3 -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <!-- Custom JS -->
-  <script src="d3_script.js"></script>
+  <!-- Your script -->
+  <script src="js/d3_load.js"></script>
 </body>
 </html>
