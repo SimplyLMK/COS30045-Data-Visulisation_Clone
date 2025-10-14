@@ -4,8 +4,9 @@ const svg = d3
   .select(".responsive-svg-container")
   .append("svg")
   // Intentionally small viewBox to test scaling
-  .attr("viewBox", "0 0 500 400")
-  .style("border", "1px solid black");
+  .attr("viewBox", "0 0 600 500");
+
+
 
 d3.csv("data/tv2.csv", d => ({
   brand: d["Brand_Reg"],
