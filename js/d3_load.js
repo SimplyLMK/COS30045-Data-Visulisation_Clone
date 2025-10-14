@@ -12,25 +12,12 @@ const svg = d3.select("#chart")
   .style("background", "#fafafa")
   .style("border", "1px solid #ccc");
 
-// STEP 2: Load CSV
-// Use relative path, adjust if needed (e.g., "../data/tv2.csv")
 d3.csv("data/tv2.csv", d => ({
   brand: d["Brand_Reg"],
   count: +d["Count"]
 })).then(data => {
   console.log("Loaded data:", data);
 
-  // Sanity check: render local data if CSV is empty
-  if (!data || data.length === 0 || !data[0].brand) {
-    data = [
-      { brand: "ENGLAON", count: 17 },
-      { brand: "CAIXUN", count: 8 },
-      { brand: "SONIQ", count: 2 },
-      { brand: "Viano", count: 2 },
-      { brand: "yokohama", count: 2 }
-    ];
-    console.warn("⚠️ CSV not loaded or empty, using fallback data");
-  }
 
   data.sort((a, b) => d3.descending(a.count, b.count));
 
