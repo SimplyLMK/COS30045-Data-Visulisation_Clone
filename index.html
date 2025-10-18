@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>TV Energy Consumption</title>
   <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/visualisations.css" />
+  <link rel="stylesheet" href="css/visualisation.css" />
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
@@ -16,12 +16,8 @@
     <h2>Energy Consumption for different TV screen types and sizes</h2>
     <p>Most TVs on sale in Australia are LED and they vary considerably in energy consumption.</p>
 
-    <div id="filter-buttons">
-      <button class="filter-btn active" data-type="All">All</button>
-      <button class="filter-btn" data-type="LED">LED</button>
-      <button class="filter-btn" data-type="LCD">LCD</button>
-      <button class="filter-btn" data-type="OLED">OLED</button>
-    </div>
+    <!-- filters container (buttons will be populated by JS) -->
+    <div id="filter-buttons"></div>
 
     <div id="chart"></div>
 
