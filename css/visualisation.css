@@ -1,0 +1,22 @@
+#filter-buttons {
+  margin: 20px 0;
+}
+
+.filter-btn {
+  background-color: #c86421;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filter-btn.active {
+  background-color: #f6a55b;
+  color: #fff;
+}
+
+#chart {
+  margin-top: 20px;
+}
