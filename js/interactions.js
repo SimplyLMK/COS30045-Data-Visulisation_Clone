@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   // draw initial histogram for the active filter
   const active = FILTERS_SCREEN.find(f => f.isActive)?.id || "All";
   drawHistogram(active);
+
+  // draw scatterplot (shows all data, adds tooltip interactions)
+  if (typeof drawScatterplot === "function") {
+    drawScatterplot(active);
+  }
 });
 
 function populateFilters(filters) {
@@ -26,5 +31,10 @@ function populateFilters(filters) {
 
       // redraw histogram for selected filter
       drawHistogram(d.id);
+
+      // also update scatterplot to match the selected filter
+      if (typeof drawScatterplot === "function") {
+        drawScatterplot(d.id);
+      }
     });
 }
